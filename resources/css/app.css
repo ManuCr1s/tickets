@@ -1,0 +1,4 @@
+@import 'bootstrap.min.css';
+@import 'datatables/media/css/jquery.dataTables.min.css';
+@import 'light-bootstrap-dashboard.css';
+@import './style.css';
