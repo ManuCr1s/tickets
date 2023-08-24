@@ -3,7 +3,7 @@
             <div >
                     <h4 class="text-center font-weight-bold m-0">NUEVA CONSULTA DE EXPEDIENTE DE LA PLATAFORMA DIGITAL DE GESTION DOCUMENTAL</h4>
                     <div class="d-flex justify-content-center">
-                            <img src="http://localhost:8081/report/public/assets/img/logo.png" alt="HONORABLE MUNICPALIDAD DE PASCO"  style="width:10%">
+                            <img src="{{asset('assets/img/logo.png')}}" alt="HONORABLE MUNICPALIDAD DE PASCO"  style="width:10%">
                     </div>
                     <h5 class="text-center my-3">Ingrese numero de expediente del ticket que desea hacer seguimiento.</h5>
             </div>

@@ -1,9 +1,5 @@
 @extends('template.template')
-@section('env')
-        <div id="env" data-api-url="{{env('APP_ROUTE')}}"></div>
-@endsection
 @section('container')
-
         <div class="container-fluid">
                 <div class="row mt-5 mx-4">
                         <div class="col-md-8">
@@ -29,5 +25,4 @@
                         </div>        
                 </div>
         </div>
-
 @endsection

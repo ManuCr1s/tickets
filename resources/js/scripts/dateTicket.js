@@ -6,13 +6,10 @@ import 'datatables.net-responsive';
 import Chart from 'chart.js';
 import Cleave from 'cleave.js';
 import { parse } from 'postcss';
-import pdfmake from 'pdfmake';
+import jsPDF from 'jspdf';
 import 'datatables.net-buttons-dt';
 import 'datatables.net-buttons/js/buttons.html5.mjs';
 import 'datatables.net-buttons/js/buttons.print.mjs'; 
-import pdfFonts from "pdfmake/build/vfs_fonts";
-import jsPDF from 'jspdf';
-pdfMake.vfs = pdfFonts.pdfMake.vfs;
 import swal from 'sweetalert';
 $(document).ready(function(){
     $("#preloader").hide();
@@ -30,7 +27,7 @@ $(document).ready(function(){
         }
 
     //Impresion de la tabla de los ultimos expedientes
-console.log(ultimos)
+
     ultimate.DataTable({
         responsive: true,
         searching:false,
