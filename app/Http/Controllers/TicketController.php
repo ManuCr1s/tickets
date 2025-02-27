@@ -8,6 +8,7 @@ use App\Models\Origen;
 use App\Models\Pasos;
 use App\Models\Dias;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\TicketRequest;
 
 class TicketController extends Controller
 {
@@ -36,10 +37,8 @@ class TicketController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TicketRequest $request)
     {
-        $validator = Validator::make($request->all(),$this->rules,$this->message);
-        if($validator->fails())return $validator->errors();
         $origen = Origen::where('numticket',$request->input('ticket'))->orWhere('numticket',str_replace("-","",$request->input('ticket')))->first();
         if(!$origen)return $errors = ['ticket'=> 'No se encontro el expediente, ingrese nuevamente'];
         $pasos = $this->show($origen->idsol);
@@ -47,13 +46,6 @@ class TicketController extends Controller
         $response = ['origen'=>$origen,'pasos'=>$pasos,'dias'=>$dias];
         return $response;
     }
-    private $rules = [
-            'ticket'=>'required|size:31'
-        ];
-    private $message =  [
-            'ticket.required'=>'Ingrese un numero de Ticket',
-            'ticket.size'=>'Ingrese un numero de Ticket de 25 numeros'
-        ]; 
     /**
      * Display the specified resource.
      *
